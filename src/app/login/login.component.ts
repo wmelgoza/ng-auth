@@ -10,7 +10,11 @@ import { UserService } from '../services/user.service';
 export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService) {
-    console.log(this.userService.test());
+    this.userService.test().subscribe(
+      (response)=>{
+        console.log(response);
+      }
+    );
   }
 
   ngOnInit(): void {
